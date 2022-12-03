@@ -1,0 +1,70 @@
+import RPi.GPIO as io
+from time import sleep
+
+io.setmode(io.BOARD)
+a=7
+b=11
+c=12
+d=13
+io.setup(a,io.OUT)
+io.setup(b,io.OUT)
+io.setup(c,io.OUT)
+io.setup(d,io.OUT)
+
+
+
+while True:
+	# 0 Deg
+	io.output(a,io.HIGH)
+	io.output(b,io.LOW)
+	io.output(c,io.LOW)
+	io.output(d,io.HIGH)
+	sleep(0.3)
+	#45 Deg
+	io.output(a,io.HIGH)
+	io.output(b,io.LOW)
+	io.output(c,io.LOW)
+	io.output(d,io.LOW)
+	sleep(0.3)
+	#90 Deg
+	io.output(a,io.HIGH)
+	io.output(b,io.HIGH)
+	io.output(c,io.LOW)
+	io.output(d,io.LOW)
+	sleep(0.3)
+	#135 Deg
+	io.output(a,io.LOW)
+	io.output(b,io.HIGH)
+	io.output(c,io.LOW)
+	io.output(d,io.LOW)
+	sleep(0.3)
+	#180
+	io.output(a,io.LOW)
+	io.output(b,io.HIGH)
+	io.output(c,io.HIGH)
+	io.output(d,io.LOW)
+	sleep(0.3)
+	#225 Deg
+	io.output(a,io.LOW)
+	io.output(b,io.LOW)
+	io.output(c,io.HIGH)
+	io.output(d,io.LOW)
+	sleep(0.3)
+	#270
+	io.output(a,io.LOW)
+	io.output(b,io.LOW)
+	io.output(c,io.HIGH)
+	io.output(d,io.HIGH)
+	sleep(0.3)
+	#315
+	io.output(a,io.LOW)
+	io.output(b,io.LOW)
+	io.output(c,io.LOW)
+	io.output(d,io.HIGH)
+	sleep(0.3)
+	#360
+	io.output(a,io.HIGH)
+	io.output(b,io.LOW)
+	io.output(c,io.LOW)
+	io.output(d,io.HIGH)
+	sleep(0.3)
