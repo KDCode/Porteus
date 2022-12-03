@@ -1,1 +1,111 @@
-aaaaa
+import RPi.GPIO as io
+import time
+
+io.setmode(io.BOARD)
+
+a=7
+b=11
+c=12
+d=13
+e=15
+f=16
+g=18
+
+io.setup(a, io.OUT)
+io.setup(b, io.OUT)
+io.setup(c, io.OUT)
+io.setup(d, io.OUT)
+io.setup(e, io.OUT)
+io.setup(f, io.OUT)
+io.setup(g, io.OUT)
+
+while True:
+	# 0
+	io.output(a, io.HIGH)
+	io.output(b, io.HIGH)
+	io.output(c, io.HIGH)
+	io.output(d, io.HIGH)
+	io.output(e, io.HIGH)
+	io.output(f, io.HIGH)
+	io.output(g, io.LOW)
+	time.sleep(1)
+	io.output(a, io.LOW)
+	io.output(b, io.HIGH)
+	io.output(c, io.HIGH)
+	io.output(d, io.LOW)
+	io.output(e, io.LOW)
+	io.output(f, io.LOW)
+	io.output(g, io.LOW)
+	time.sleep(1)
+	# 2
+	io.output(a, io.HIGH)
+	io.output(b, io.HIGH)
+	io.output(c, io.LOW)
+	io.output(d, io.HIGH)
+	io.output(e, io.HIGH)
+	io.output(f, io.LOW)
+	io.output(g, io.HIGH)
+	time.sleep(1)
+	# 3
+	io.output(a, io.HIGH)
+	io.output(b, io.HIGH)
+	io.output(c, io.HIGH)
+	io.output(d, io.HIGH)
+	io.output(e, io.LOW)
+	io.output(f, io.LOW)
+	io.output(g, io.HIGH)
+	time.sleep(1)
+	# 4
+	io.output(a, io.LOW)
+	io.output(b, io.HIGH)
+	io.output(c, io.HIGH)
+	io.output(d, io.LOW)
+	io.output(e, io.LOW)
+	io.output(f, io.HIGH)
+	io.output(g, io.HIGH)
+	time.sleep(1)
+	# 5
+	io.output(a, io.HIGH)
+	io.output(b, io.LOW)
+	io.output(c, io.HIGH)
+	io.output(d, io.HIGH)
+	io.output(e, io.LOW)
+	io.output(f, io.HIGH)
+	io.output(g, io.HIGH)
+	time.sleep(1)
+	# 6
+	io.output(a, io.HIGH)
+	io.output(b, io.LOW)
+	io.output(c, io.HIGH)
+	io.output(d, io.HIGH)
+	io.output(e, io.HIGH)
+	io.output(f, io.HIGH)
+	io.output(g, io.HIGH)
+	time.sleep(1)
+	# 7
+	io.output(a, io.HIGH)
+	io.output(b, io.HIGH)
+	io.output(c, io.HIGH)
+	io.output(d, io.LOW)
+	io.output(e, io.LOW)
+	io.output(f, io.LOW)
+	io.output(g, io.LOW)
+	time.sleep(1)
+	# 8
+	io.output(a, io.HIGH)
+	io.output(b, io.HIGH)
+	io.output(c, io.HIGH)
+	io.output(d, io.HIGH)
+	io.output(e, io.HIGH)
+	io.output(f, io.HIGH)
+	io.output(g, io.HIGH)
+	time.sleep(1)
+	# 9
+	io.output(a, io.HIGH)
+	io.output(b, io.HIGH)
+	io.output(c, io.HIGH)
+	io.output(d, io.HIGH)
+	io.output(e, io.LOW)
+	io.output(f, io.HIGH)
+	io.output(g, io.HIGH)
+	time.sleep(1)
