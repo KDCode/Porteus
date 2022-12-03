@@ -1,0 +1,84 @@
+import RPi.GPIO as io
+from time import sleep
+
+io.setmode(io.BOARD)
+
+a = 7
+b = 11
+c = 12
+d = 13
+switch=15
+switch2 =16
+io.setup(a, io.OUT)
+io.setup(b, io.OUT)
+io.setup(c, io.OUT)
+io.setup(d, io.OUT)
+io.setup(switch, io.IN)
+io.setup(switch2, io.IN)
+count=0
+while True:
+	if (io.input(switch) == io.HIGH):
+		while (io.input(switch) == io.HIGH):
+			sleep(0.01)
+		if(count==7):
+			count=0
+		else:
+			count=count+1
+
+	if (io.input(switch2) == io.HIGH):
+		while (io.input(switch2) == io.HIGH):
+			sleep(0.01)
+		if count == 0:
+			count = 7
+		else:
+			count = count - 1
+	
+	if count == 0:
+		# 0 Deg
+		io.output(a, io.HIGH)
+		io.output(b, io.LOW)
+		io.output(c, io.LOW)
+		io.output(d, io.HIGH)
+	elif count == 1:
+		# 45 Deg
+		io.output(a, io.HIGH)
+		io.output(b, io.LOW)
+		io.output(c, io.LOW)
+		io.output(d, io.LOW)
+	elif count == 2:
+		# 90 Deg
+		io.output(a, io.HIGH)
+		io.output(b, io.HIGH)
+		io.output(c, io.LOW)
+		io.output(d, io.LOW)
+	elif count == 3:
+		# 135 Deg
+		io.output(a, io.LOW)
+		io.output(b, io.HIGH)
+		io.output(c, io.LOW)
+		io.output(d, io.LOW)
+	elif count == 4:
+		# 180 Deg
+		io.output(a, io.LOW)
+		io.output(b, io.HIGH)
+		io.output(c, io.HIGH)
+		io.output(d, io.LOW)
+	elif count == 5:
+		# 225 Deg
+		io.output(a, io.LOW)
+		io.output(b, io.LOW)
+		io.output(c, io.HIGH)
+		io.output(d, io.LOW)
+	elif count == 6:
+		# 270 Deg
+		io.output(a, io.LOW)
+		io.output(b, io.LOW)
+		io.output(c, io.HIGH)
+		io.output(d, io.HIGH)
+	elif count == 7:
+		# 315 Deg
+		io.output(a, io.LOW)
+		io.output(b, io.LOW)
+		io.output(c, io.LOW)
+		io.output(d, io.HIGH)
+	sleep(0.01)
