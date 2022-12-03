@@ -1,0 +1,79 @@
+import RPi.GPIO as io
+import time
+
+io.setmode(io.BOARD)
+
+led1 = 3
+led2 = 5
+led3 = 7
+led4 = 11
+switch = 8
+
+io.setup(led1, io.OUT)
+io.setup(led2, io.OUT)
+io.setup(led3, io.OUT)
+io.setup(led4, io.OUT)
+io.setup(switch,io.IN)
+
+count = 0
+
+while True:
+	if (io.input(switch) == io.HIGH):
+		while (io.input(switch) == io.HIGH):
+			time.sleep(0.001)
+		if (count == 9):
+			count = 0
+		else:
+			count = count + 1
+			
+	if (count == 0):
+		io.output(led1,io.LOW)
+		io.output(led2,io.LOW)
+		io.output(led3,io.LOW)
+		io.output(led4,io.LOW)
+	elif(count == 1):
+		io.output(led1,io.LOW)
+		io.output(led2,io.LOW)
+		io.output(led3,io.LOW)
+		io.output(led4,io.HIGH)
+	elif(count == 2):
+		io.output(led1,io.LOW)
+		io.output(led2,io.LOW)
+		io.output(led3,io.HIGH)
+		io.output(led4,io.LOW)
+	elif(count == 3):
+		io.output(led1,io.LOW)
+		io.output(led2,io.LOW)
+		io.output(led3,io.HIGH)
+		io.output(led4,io.HIGH)
+	elif(count == 4):
+		io.output(led1,io.LOW)
+		io.output(led2,io.HIGH)
+		io.output(led3,io.LOW)
+		io.output(led4,io.LOW)
+	elif(count == 5):
+		io.output(led1,io.LOW)
+		io.output(led2,io.HIGH)
+		io.output(led3,io.LOW)
+		io.output(led4,io.HIGH)
+	elif(count == 6):
+		io.output(led1,io.LOW)
+		io.output(led2,io.HIGH)
+		io.output(led3,io.HIGH)
+		io.output(led4,io.LOW)
+	elif(count == 7):
+		io.output(led1,io.LOW)
+		io.output(led2,io.HIGH)
+		io.output(led3,io.HIGH)
+		io.output(led4,io.HIGH)
+	elif(count == 8):
+		io.output(led1,io.HIGH)
+		io.output(led2,io.LOW)
+		io.output(led3,io.LOW)
+		io.output(led4,io.LOW)
+	elif(count == 9):
+		io.output(led1,io.HIGH)
+		io.output(led2,io.LOW)
+		io.output(led3,io.LOW)
+		io.output(led4,io.HIGH)
+	time.sleep(0.1)
